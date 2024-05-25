@@ -18,7 +18,7 @@ init_db()
 @app.route('/')
 def index():
     with sqlite3.connect('blog.db') as conn:
-        posts = conn.execute('SELECT id, title FROM posts').fetchall()  # Only select id and title
+        posts = conn.execute('SELECT id, title FROM posts').fetchall() 
     return render_template('index.html', posts=posts)
 
 @app.route('/post/<int:post_id>')
